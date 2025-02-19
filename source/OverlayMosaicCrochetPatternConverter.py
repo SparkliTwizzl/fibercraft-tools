@@ -1,10 +1,27 @@
 # This script converts a crochet pattern into a specific format for overlay mosaic crochet.
-# The input is a CSV file with the following format:
-# Line Number, Color, Row Pattern
-# The row pattern is a comma-separated list of stitch counts and types, e.g. "2sc,3hdc,4dc".
-# The output is a formatted string for each row, with the line number, color, and stitch pattern.
-# The stitch pattern is formatted as [starting stitch] stitch count and type, e.g. "[1] 2sc, [3] 3hdc, [6] 4dc".
+
+# The input is a TSV file with a pattern row on each line, formatted as "[Row number]\t[Row color]\t[Row pattern].
+# The row number is optional; if not provided, it will be generated sequentially starting from 1.
+# The row color is optional; if not provided, it will alternate between 'A' for odd rows and 'B' for even rows.
+# The row pattern is a comma-separated list that describes the stitches in the row as segments of repeated stitch types.
+# Each segment of the pattern is in the format "[Stitch count][Stitch type], e.g. "2sc,3hdc,4dc".
+
+# The output is a formatted string for each row, with the row number, color, and stitch pattern.
+# The row number is padded to a fixed width, and the color is padded to a fixed width.
+# The stitch pattern is formatted with a starting stitch number for each segment, and the segments are separated by commas, e.g. "[1] 2sc, [3] 3hdc, [6] 4dc".
 # A border stitch is added at the start and end of each row pattern.
+
+# The script also handles the case where the input file is empty or not provided.
+# The output is written to a new file with "_output" appended to the original filename.
+# The script is designed to be run from the command line with the input file as an argument.
+
+# Example input file:
+# 1	red	2sc,3hdc,4dc
+# 2	blue	5dc,6sc
+
+# Example output file:
+#     1. red        bs, [1] 2sc, [3] 3hdc, [6] 4dc, bs
+#     2. blue       bs, [1] 5dc, [6] 6sc, bs
 
 
 import sys
@@ -15,21 +32,6 @@ row_elements_number_color_pattern = 3
 row_elements_color_pattern = 2
 row_elements_pattern = 1
 row_number_left_padding = 5
-
-
-def main():
-    input_file_path = sys.argv[1] if len(sys.argv) > 1 else 'input.txt'
-    rows = load_input_file(input_file_path)
-    if not rows:
-        print("The input file is empty.")
-        return
-    formatted_rows = parse_rows(rows)
-    output_file_path = input_file_path.split('.')[0] + '_output.txt'
-    with open(output_file_path, 'w') as file:
-        for row in formatted_rows:
-            file.write(row + '\n')
-    print(f"Formatted rows have been written to {output_file_path}.")
-    return
 
 
 def format_row_color(color):
@@ -97,6 +99,20 @@ def parse_rows(rows):
         row_count += 1
     return output
 
+
+def main():
+    input_file_path = sys.argv[1] if len(sys.argv) > 1 else 'input.txt'
+    rows = load_input_file(input_file_path)
+    if not rows:
+        print("The input file is empty.")
+        return
+    formatted_rows = parse_rows(rows)
+    output_file_path = input_file_path.split('.')[0] + '_output.txt'
+    with open(output_file_path, 'w') as file:
+        for row in formatted_rows:
+            file.write(row + '\n')
+    print(f"Formatted rows have been written to {output_file_path}.")
+    return
 
 
 if __name__ == "__main__":
