@@ -7,9 +7,9 @@
 # Each segment of the pattern is in the format "[Stitch count][Stitch type], e.g. "2sc,3hdc,4dc".
 
 # The output is a formatted string for each row, with the row number, color, and stitch pattern.
-# The row number is padded to a fixed width, and the color is padded to a fixed width.
-# The stitch pattern is formatted with a starting stitch number for each segment, and the segments are separated by commas, e.g. "[1] 2sc, [3] 3hdc, [6] 4dc".
-# A border stitch is added at the start and end of each row pattern.
+# The row number and color are padded to fixed widths for readability.
+# The stitch pattern adds a starting stitch number to each segment, e.g. "[1] 2sc, [3] 3hdc, [6] 4dc".
+# A border stitch is added at the start and end of each row.
 
 # The script also handles the case where the input file is empty or not provided.
 # The output is written to a new file with "_output" appended to the original filename.
