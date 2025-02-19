@@ -28,14 +28,15 @@ def main():
     with open(output_file_path, 'w') as file:
         for row in formatted_rows:
             file.write(row + '\n')
+    print(f"Formatted rows have been written to {output_file_path}.")
     return
 
 
 def format_row_color(color):
-    return color.rjust(row_color_right_padding) + ' '
+    return color.ljust(row_color_right_padding) + ' '
 
 def format_row_number(row_number):
-    return str(row_number).ljust(row_number_left_padding) + '. '
+    return str(row_number).rjust(row_number_left_padding) + '. '
 
 def format_row_pattern_segment(stitch_count, stitch_type):
     return str(stitch_count) + stitch_type + ', '
@@ -93,5 +94,16 @@ def parse_rows(rows):
             continue
         row_number = row_count
         output.append(parse_row(row, row_number))
-        ++row_count
+        row_count += 1
     return output
+
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python OverlayMosaicCrochetPatternConverter.py <input_file>")
+        sys.exit(1)
+    if len(sys.argv) > 2:
+        print("Warning: Only the first argument will be used as the input file.")
+        sys.exit(1)
+    main()
