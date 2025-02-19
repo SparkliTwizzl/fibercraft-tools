@@ -1,0 +1,10 @@
+    0. red        bs, [1] 10sc, bs
+    1. blue       bs, [1] 5sc, [6] 5dc, bs
+    2. green      bs, [1] 10dc, bs
+    3. yellow     bs, [1] 4sc, [5] 6dc, bs
+    4. purple     bs, [1] 10sc, bs
+    5. orange     bs, [1] 3dc, [4] 7sc, bs
+    6. pink       bs, [1] 10dc, bs
+    7. brown      bs, [1] 6sc, [7] 4dc, bs
+    8. black      bs, [1] 10sc, bs
+    9. white      bs, [1] 2dc, [3] 8sc, bs

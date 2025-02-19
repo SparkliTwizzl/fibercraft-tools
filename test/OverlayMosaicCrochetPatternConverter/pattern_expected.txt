@@ -1,0 +1,10 @@
+    1. A          bs, [1] 10sc, bs
+    2. B          bs, [1] 5sc, [6] 5dc, bs
+    3. A          bs, [1] 10dc, bs
+    4. B          bs, [1] 4sc, [5] 6dc, bs
+    5. A          bs, [1] 10sc, bs
+    6. B          bs, [1] 3dc, [4] 7sc, bs
+    7. A          bs, [1] 10dc, bs
+    8. B          bs, [1] 6sc, [7] 4dc, bs
+    9. A          bs, [1] 10sc, bs
+   10. B          bs, [1] 2dc, [3] 8sc, bs

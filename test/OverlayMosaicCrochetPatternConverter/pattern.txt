@@ -1,0 +1,10 @@
+10sc
+5sc,5dc
+10dc
+4sc,6dc
+10sc
+3dc,7sc
+10dc
+6sc,4dc
+10sc
+2dc,8sc

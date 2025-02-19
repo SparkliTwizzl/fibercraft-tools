@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "OMC Pattern Converter: Number, color, pattern",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/source/OverlayMosaicCrochetPatternConverter.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${workspaceFolder}/test/OverlayMosaicCrochetPatternConverter/number_color_pattern.txt",
+            ]
+        },
+        {
+            "name": "OMC Pattern Converter: Color, pattern",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/source/OverlayMosaicCrochetPatternConverter.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${workspaceFolder}/test/OverlayMosaicCrochetPatternConverter/color_pattern.txt",
+            ]
+        },
+        {
+            "name": "OMC Pattern Converter: Pattern",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/source/OverlayMosaicCrochetPatternConverter.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${workspaceFolder}/test/OverlayMosaicCrochetPatternConverter/pattern.txt",
+            ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "OMC Pattern Converter: All",
+            "configurations": [
+                "OMC Pattern Converter: Number, color, pattern",
+                "OMC Pattern Converter: Color, pattern",
+                "OMC Pattern Converter: Pattern"
+            ]
+        }
+    ]
+}

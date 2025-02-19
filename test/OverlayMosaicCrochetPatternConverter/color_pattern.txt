@@ -1,0 +1,10 @@
+red	10sc
+blue	5sc,5dc
+green	10dc
+yellow	4sc,6dc
+purple	10sc
+orange	3dc,7sc
+pink	10dc
+brown	6sc,4dc
+black	10sc
+white	2dc,8sc
